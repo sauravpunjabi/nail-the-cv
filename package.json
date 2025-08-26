@@ -12,6 +12,7 @@
     "@react-router/node": "^7.7.1",
     "@react-router/serve": "^7.7.1",
     "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
     "isbot": "^5.1.27",
     "pdfjs-dist": "^5.4.54",
     "react": "^19.1.0",

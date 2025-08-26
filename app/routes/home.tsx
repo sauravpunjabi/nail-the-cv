@@ -2,6 +2,8 @@ import { resumes } from "~/constants";
 import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
+import Loader from "~/components/Loader";
+import { useState } from "react";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "NailTheCV" },
@@ -10,8 +12,15 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+  
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
 
+    {isLoading && <Loader onLoadingComplete={handleLoadingComplete} />}
     <Navbar />
 
     <section className="main-section">
